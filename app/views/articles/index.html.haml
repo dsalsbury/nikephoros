@@ -1,3 +1,5 @@
+= page_entries_info @articles
+
 %table.articles
   %thead
     %tr
@@ -11,3 +13,4 @@
       %td= article.date
       %td= article.pages
       %td= article.volume
+  %tfoot= paginate @articles, remote: true

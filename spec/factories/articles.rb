@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :article do
-    title 'Some Title'
+    sequence(:title) { |n| "Some Title #{n}" }
     date '2013-09-01'
   end
 end
