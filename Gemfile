@@ -17,6 +17,11 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'unicorn'
 
+gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
+gem 'ransack'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'formtastic',          github: 'justinfrench/formtastic'
+
 group :development do
   gem 'foreman'
   gem 'better_errors'
