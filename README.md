@@ -1,9 +1,3 @@
-You look great in Suspenders
-============================
+[![Build Status](https://travis-ci.org/mwean/nikephoros.png)](https://travis-ci.org/mwean/nikephoros)
 
-Use the following guides for getting things done, programming well, and
-programming in style.
-
-* [Protocol](http://github.com/thoughtbot/guides/blob/master/protocol)
-* [Best Practices](http://github.com/thoughtbot/guides/blob/master/best-practices)
-* [Style](http://github.com/thoughtbot/guides/blob/master/style)
+[![Code Climate](https://codeclimate.com/github/mwean/nikephoros.png)](https://codeclimate.com/github/mwean/nikephoros)
