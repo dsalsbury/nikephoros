@@ -43,6 +43,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'timecop'
   gem 'webmock'
+  gem 'rack_session_access'
 end
 
 group :staging, :production do
