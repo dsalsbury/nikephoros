@@ -26,7 +26,6 @@ group :development do
   gem 'foreman'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'i18n-spec'
   gem 'localeapp'
 end
 
