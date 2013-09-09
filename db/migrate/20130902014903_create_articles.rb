@@ -3,7 +3,6 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.belongs_to :volume, index: true
       t.string     :title
-      t.date       :date
       t.string     :pages
       t.attachment :pdf
 

@@ -3,7 +3,6 @@ ActiveAdmin.register Article, download_links: false do
 
   index do
     column :title
-    column :date
     column :pages
     default_actions
   end

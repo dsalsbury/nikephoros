@@ -4,13 +4,11 @@
   %thead
     %tr
       %th= Article.human_attribute_name(:title)
-      %th= Article.human_attribute_name(:date)
       %th= Article.human_attribute_name(:pages)
       %th= Article.human_attribute_name(:volume)
   %tbody
     = content_tag_for(:tr, @articles) do |article|
       %td= article.title
-      %td= article.date
       %td= article.pages
       %td= article.volume
   %tfoot= paginate @articles, remote: true
