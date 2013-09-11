@@ -1,7 +1,7 @@
-ActiveAdmin.register Article, download_links: false do
+ActiveAdmin.register Article do
   config.filters = false
 
-  index do
+  index download_links: false do
     column :title
     column :pages
     default_actions
@@ -31,7 +31,7 @@ ActiveAdmin.register Article, download_links: false do
     helper_method :volumes, :authors
 
     def permitted_params
-      params.permit({ article: [:volume_id, { author_ids: [] }, :title, :pages, :pdf] }, :utf8, :authenticity_token, :commit)
+      params.permit({ article: [:volume_id, { author_ids: [] }, :title, :pages, :pdf] })
     end
   end
 end
