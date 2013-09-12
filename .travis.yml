@@ -5,6 +5,8 @@ rvm:
 before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
+  - export RUBY_GC_MALLOC_LIMIT=90000000
+  - export RUBY_FREE_MIN=200000
 before_script:
   - psql -c 'create database nikephoros_test;' -U postgres
   - 'bundle exec rake db:migrate'
