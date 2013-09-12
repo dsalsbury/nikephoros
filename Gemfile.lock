@@ -1,7 +1,22 @@
 GIT
-  remote: git://github.com/gregbell/active_admin.git
-  revision: 72a9c30cef47b3f38c38039de021aaa3194c188b
-  branch: rails4
+  remote: git://github.com/josevalim/inherited_resources.git
+  revision: fdc9de6ca213ab8f3b97f37e5d071363198e018a
+  specs:
+    inherited_resources (1.4.1)
+      has_scope (~> 0.6.0.rc)
+      responders (~> 1.0.0.rc)
+
+GIT
+  remote: git://github.com/justinfrench/formtastic.git
+  revision: cd6cb88f28ea7444267802ced8e5ec0f5cfd0f90
+  specs:
+    formtastic (2.3.0.rc2)
+      actionpack (>= 3.0)
+
+GIT
+  remote: git://github.com/mwean/active_admin.git
+  revision: 9df11fd300c43f0ab998a9292d44bfcdd4f1b7b8
+  branch: add-custom-sort
   specs:
     activeadmin (0.6.0)
       arbre (>= 1.0.1)
@@ -16,21 +31,6 @@ GIT
       rails (>= 3.2.0)
       ransack (>= 1.0.0)
       sass-rails (>= 3.2.0)
-
-GIT
-  remote: git://github.com/josevalim/inherited_resources.git
-  revision: fdc9de6ca213ab8f3b97f37e5d071363198e018a
-  specs:
-    inherited_resources (1.4.1)
-      has_scope (~> 0.6.0.rc)
-      responders (~> 1.0.0.rc)
-
-GIT
-  remote: git://github.com/justinfrench/formtastic.git
-  revision: cd6cb88f28ea7444267802ced8e5ec0f5cfd0f90
-  specs:
-    formtastic (2.3.0.rc2)
-      actionpack (>= 3.0)
 
 GEM
   remote: https://rubygems.org/
@@ -99,10 +99,11 @@ GEM
       safe_yaml (~> 0.9.0)
     database_cleaner (1.1.1)
     debug_inspector (0.0.2)
-    devise (3.0.3)
+    devise (3.1.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.4)
     dotenv (0.9.0)

@@ -20,7 +20,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'unicorn'
 
-gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
+gem 'activeadmin',         github: 'mwean/active_admin', branch: 'add-custom-sort'
 gem 'ransack'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'formtastic',          github: 'justinfrench/formtastic'
