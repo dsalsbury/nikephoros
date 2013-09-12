@@ -11,3 +11,8 @@ before_script:
   - psql -c 'create database nikephoros_test;' -U postgres
   - 'bundle exec rake db:migrate'
 script: bundle exec rspec spec
+deploy:
+  provider: heroku
+  api_key:
+    secure: Vfb/yZQn1AyO9gYV/dLB2V3ltxwMJrgr55NvULJALI3thqbK5cQiFvGjVYBMg/aQnAIwY0tWW2LQ2D0rMz4+qJ/dADBuKW63uSddLiNDsVBBYBUYL/pJ1UdmoVAEHIyfja9CoqiKBUlb6TsHNItcrytnA8ehsAYaneZJLgJC5Dc=
+  run: 'rake db:migrate'
