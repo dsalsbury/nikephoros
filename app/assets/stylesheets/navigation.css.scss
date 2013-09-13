@@ -1,0 +1,55 @@
+// @import url(http://fonts.googleapis.com/css?family=Josefin%20Sans:700);
+// @import url(http://fonts.googleapis.com/css?family=Raleway);
+
+// Actor
+// Armata
+
+// Syncopate
+// Josefin Sans
+// Raleway
+
+nav {
+  height: 60px;
+  border-bottom: 1px solid #bbb;
+
+  a {
+    text-decoration: none;
+    color: #444;
+    font-variant: small-caps;
+
+    &:hover {
+      color: #2C98C8;
+    }
+  }
+
+  .title {
+    float: left;
+    position: relative;
+    margin-left: 10px;
+
+    h1 {
+      margin-top: 10px;
+    }
+  }
+
+  .pages {
+    float: right;
+    margin-right: 10px;
+
+    ul {
+      margin-top: 18px;
+      margin-bottom: 0;
+    }
+
+    li {
+      font-size: 20px;
+      list-style-type: none;
+      display: inline;
+      padding-right: 10px;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
