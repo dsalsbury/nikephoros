@@ -1,18 +1,29 @@
 language: ruby
-bundler_args: --without development
+bundler_args: --without development --path=~/.bundle
 rvm:
-  - '2.0.0'
+  - 2.0.0
 before_install:
+  - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
+  - gem install bundler bundle_cache
+  - bundle_cache_install
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - export RUBY_GC_MALLOC_LIMIT=90000000
   - export RUBY_FREE_MIN=200000
+env:
+  global:
+    - BUNDLE_ARCHIVE=travis_bundle
+    - AWS_S3_BUCKET=nikephoros
+    - RAILS_ENV=test
+    - secure: DWLWO0VPtaE93nj3d9ksZ7teOTWnrIbrzn+9hcDpg4L/Pc6/AmQniOTHViGcMNSNRC3dEWZb83mmB1lgBHHGbSANybKh2Dl2DbxNC3VVAFEC1ku6xGo+9P3nPp6tjhERMIHF8yze+nhHnDED9JS+7H35+2zHyaDwRqb6skY1a3A=
 before_script:
   - psql -c 'create database nikephoros_test;' -U postgres
-  - 'bundle exec rake db:migrate'
+  - bundle exec rake db:migrate
 script: bundle exec rspec spec
+after_script:
+  - bundle_cache
 deploy:
   provider: heroku
   api_key:
     secure: Vfb/yZQn1AyO9gYV/dLB2V3ltxwMJrgr55NvULJALI3thqbK5cQiFvGjVYBMg/aQnAIwY0tWW2LQ2D0rMz4+qJ/dADBuKW63uSddLiNDsVBBYBUYL/pJ1UdmoVAEHIyfja9CoqiKBUlb6TsHNItcrytnA8ehsAYaneZJLgJC5Dc=
-  run: 'rake db:migrate'
+  run: rake db:migrate
