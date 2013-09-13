@@ -1,0 +1,29 @@
+table {
+  max-width: 800px;
+  min-width: 450px;
+
+  .center {
+    text-align: center;
+  }
+}
+
+th {
+  border-bottom: 1px solid #bbb;
+}
+
+td {
+  padding: 8px;
+  line-height: 1;
+
+  &:not(.center) {
+    padding-left: 20px;
+  }
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+
+  &:hover {
+    background-color: tint($blue, 30%);
+  }
+}
