@@ -1,14 +1,16 @@
-= page_entries_info @articles
-
 %table.articles
   %thead
     %tr
+      %th= Article.human_attribute_name(:volume)
+      %th= Article.human_attribute_name(:authors)
       %th= Article.human_attribute_name(:title)
       %th= Article.human_attribute_name(:pages)
-      %th= Article.human_attribute_name(:volume)
   %tbody
     = content_tag_for(:tr, @articles) do |article|
+      %td{ class: :center }
+        = article.volume.roman_numeral
+      %td= article.author_names
       %td= article.title
-      %td= article.pages
-      %td= article.volume
+      %td{ class: [:nowrap, :center] }
+        = article.pages
   %tfoot= paginate @articles, remote: true
