@@ -1,5 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway);
-@import url(http://fonts.googleapis.com/css?family=Open%20Sans);
 
 $blue: #2C98C8;
 
@@ -8,13 +7,13 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-color: #F2F2F2;
   height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', sans-serif;
+p, th, td {
+  letter-spacing: 1px;
 }
 
 .container {
