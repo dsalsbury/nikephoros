@@ -3,7 +3,8 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.belongs_to :volume, index: true
       t.string     :title
-      t.string     :pages
+      t.integer    :first_page
+      t.string     :other_pages
       t.attachment :pdf
 
       t.timestamps

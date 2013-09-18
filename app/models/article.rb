@@ -10,6 +10,16 @@ class Article < ActiveRecord::Base
 
   validates :title, presence: true
   validates :volume, presence: true
+  validate :pages_format
+
+  def pages=(pages_str)
+    @pages = pages_str
+    self.first_page, self.other_pages = split_pages(pages_str) unless pages_str.blank?
+  end
+
+  def pages
+    [first_page.to_s, other_pages.to_s].join
+  end
 
   def keyword_names=(val)
     names = val.split(/,\s*/)
@@ -18,5 +28,18 @@ class Article < ActiveRecord::Base
 
   def keyword_names
     keywords.pluck(:name).join(',')
+  end
+
+  private
+
+  def pages_format
+    unless pages.blank? || @pages =~ /\A\d+\s*([-,]\s*\d+\s*)*\z/
+      errors.add(:pages, 'must be a series of page numbers separated by "," or "-"')
+    end
+  end
+
+  def split_pages(pages_str)
+    parts = pages_str.gsub(' ', '').split(/(-|,)/)
+    [parts[0], parts[1..-1].join]
   end
 end
