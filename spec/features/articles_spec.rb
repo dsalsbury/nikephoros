@@ -9,14 +9,16 @@ feature 'visiting the articles index' do
   end
 
   scenario 'articles are paginated' do
-    articles = FactoryGirl.create_list(:article, 2)
+    Article.paginates_per(1)
+    article1 = FactoryGirl.create(:article, pages: '1')
+    article2 = FactoryGirl.create(:article, pages: '2')
     visit articles_path
 
-    expect(page).to have_content(articles.first.title)
-    expect(page).not_to have_content(articles.last.title)
+    expect(page).to have_content(article1.title)
+    expect(page).to have_no_content(article2.title)
 
     click_on 'Next'
 
-    expect(page).to have_content(articles.last.title)
+    expect(page).to have_content(article2.title)
   end
 end
