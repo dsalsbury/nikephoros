@@ -2,7 +2,7 @@ ActiveAdmin.register Volume do
   config.filters = false
 
   index download_links: false do
-    column :number, sortable: :number
+    column :number
     column :year
     column 'ISBN', :isbn
     default_actions
