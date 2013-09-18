@@ -1,0 +1,16 @@
+%table.articles
+  %thead
+    %tr
+      %th= Article.human_attribute_name(:volume)
+      %th= Article.human_attribute_name(:authors)
+      %th= Article.human_attribute_name(:title)
+      %th= Article.human_attribute_name(:pages)
+  %tbody
+    = content_tag_for(:tr, @articles) do |article|
+      %td{ class: :center }
+        = article.volume.roman_numeral
+      %td= article.author_names
+      %td= article.title
+      %td{ class: [:nowrap, :center] }
+        = article.pages
+  %tfoot= paginate @articles, remote: true

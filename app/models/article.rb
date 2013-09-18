@@ -30,6 +30,10 @@ class Article < ActiveRecord::Base
     keywords.pluck(:name).join(',')
   end
 
+  def self.sort_by_volume_number_and_first_page
+    reorder('volumes.number DESC, articles.first_page ASC').references(:volume)
+  end
+
   private
 
   def pages_format

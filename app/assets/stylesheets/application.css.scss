@@ -1,12 +1,14 @@
-@charset 'utf-8';
+@charset "utf-8";
 
-@import 'normalize';
-@import 'bourbon';
-@import 'neat';
+@import "normalize";
+@import "bourbon";
+@import "neat";
+@import "select2";
 
-@import 'global';
-@import 'tables';
-@import 'navigation';
-@import 'home';
-@import 'volumes';
-@import 'articles';
+@import "global";
+@import "tables";
+@import "navigation";
+@import "home";
+@import "volumes";
+@import "articles";
+@import "article_search";

@@ -13,3 +13,6 @@ en:
   volume: Volume
   year: Year
   isbn: ISBN
+  articles:
+    search:
+      authors: Select one or more authors

@@ -1,2 +1,4 @@
 //= require jquery
-//= require jquery_ujs
+//= require type_watch
+//= require select2
+//= require article_search

@@ -1,0 +1,22 @@
+#article-search {
+  float: right;
+  margin-top: 10px;
+
+  a {
+    float: right;
+    text-decoration: none;
+    color: #444;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  select#q_authors_id_in {
+    width: 200px;
+  }
+
+  input.select2-input {
+    width: 200px;
+  }
+}

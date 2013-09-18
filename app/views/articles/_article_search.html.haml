@@ -1,0 +1,9 @@
+#article-search
+  = link_to 'Search', '#'
+
+  .form-container.hidden
+    = search_form_for @search, builder: SimpleForm::FormBuilder do |f|
+      = f.input :title_cont_any, label: Article.human_attribute_name(:title)
+      = f.input :authors_id_in, collection: authors, prompt: t('articles.search.authors'), label: Article.human_attribute_name(:authors), input_html: { multiple: true, class: :select2, data: { placeholder: t('articles.search.authors') } }
+      = f.input :volume_year_eq, label: Article.human_attribute_name(:year)
+      = f.input :keywords_name_in_any, collection: keywords, label: Article.human_attribute_name(:keywords), input_html: { multiple: true, class: :select2 }
