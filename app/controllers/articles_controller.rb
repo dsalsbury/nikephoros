@@ -3,8 +3,7 @@ class ArticlesController < ApplicationController
 
   def index
     @search = Article.includes(:volume, :authors).search(params[:q])
-    @articles = @search.result.sort_by_volume_number_and_first_page.decorate
-    # .page(params[:page]).decorate
+    @articles = @search.result.sort_by_volume_number_and_first_page.page(params[:page]).decorate
 
     respond_to do |format|
       format.html
