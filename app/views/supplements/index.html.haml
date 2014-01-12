@@ -1,0 +1,16 @@
+%table.supplements
+  %thead
+    %tr
+      %th= Supplement.human_attribute_name(:number)
+      %th= Supplement.human_attribute_name(:authors)
+      %th= Supplement.human_attribute_name(:title)
+      %th= Supplement.human_attribute_name(:pages)
+  %tfoot
+    %tr
+      %td.center{ colspan: 4 }= paginate @supplements, remote: true
+  %tbody
+    = content_tag_for(:tr, @supplements) do |supplement|
+      %td.center= supplement.number
+      %td= supplement.author_names
+      %td= supplement.title
+      %td.nowrap.center= supplement.pages

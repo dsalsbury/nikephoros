@@ -1,9 +1,9 @@
 class Article < ActiveRecord::Base
   belongs_to :volume
 
-  has_many :authorships
+  has_many :authorships, as: :document
   has_many :authors, through: :authorships
-  has_many :taggings
+  has_many :taggings, as: :document
   has_many :keywords, through: :taggings
 
   has_attached_file :pdf, url: '/system/pdfs/:filename', default_url: nil
