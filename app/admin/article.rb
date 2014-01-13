@@ -3,8 +3,9 @@ ActiveAdmin.register Article do
   config.filters = false
 
   index download_links: false do
+    column :volume, sortable: :volume_number
     column :title
-    column :pages
+    column :pages, sortable: :first_page
     default_actions
   end
 

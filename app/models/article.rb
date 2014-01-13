@@ -34,6 +34,14 @@ class Article < ActiveRecord::Base
     reorder('volumes.number DESC, articles.first_page ASC').references(:volume)
   end
 
+  def self.sort_by_volume_number_asc
+    includes(:volume).reorder('volumes.number ASC')
+  end
+
+  def self.sort_by_volume_number_desc
+    includes(:volume).reorder('volumes.number DESC')
+  end
+
   private
 
   def pages_format
