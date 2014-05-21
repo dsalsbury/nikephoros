@@ -1,11 +1,49 @@
 #!/usr/bin/env sh
 
-# Set up Rails app. Run this script immediately after cloning the codebase.
-# https://github.com/thoughtbot/guides/tree/master/protocol
+# Check that homebrew is installed
+which brew
 
+if [[ ! $? = 0 ]]
+then
+  echo 'homebrew is required to use this script!'
+  exit 1
+fi
+
+# Install postgreSQL
+echo 'installing postgreSQL'
+brew install postgresql
+
+# Install rvm
+which rvm
+
+if [[ $? = 0 ]]
+then
+  echo 'rvm already installed!'
+else
+  echo 'installing rvm'
+  curl -sSL https://get.rvm.io | bash -s stable
+  source ~/.rvm/scripts/rvm
+fi
+
+# Install ruby
+script_path=$(cd "$(dirname "$0")" && pwd)
+ruby_version=$(cat $script_path/../.ruby-version)
+rvm install $ruby_version
+rvm use $ruby_version
+
+# Install bundler
+which bundler
+
+if [[ ! $? = 0 ]]
+then
+  gem install bundler
+fi
+
+# Set up app
 bundle install --binstubs=bin/stubs
 bundle exec rake db:setup
 
-if [ ! -f .env ]; then
+if [ ! -f .env ]
+then
   cp .sample.env .env
 fi
