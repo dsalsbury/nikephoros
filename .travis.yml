@@ -2,7 +2,6 @@ language: ruby
 bundler_args: --without development --path=~/.bundle
 
 rvm:
-  - 2.0.0
   - 2.1.2
 
 before_install:
@@ -11,8 +10,6 @@ before_install:
   - bundle_cache_install
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - export RUBY_GC_MALLOC_LIMIT=90000000
-  - export RUBY_FREE_MIN=200000
 
 env:
   global:
