@@ -6,7 +6,7 @@ ActiveAdmin.register Article do
     column :volume, sortable: :volume_number
     column :title
     column :pages, sortable: :first_page
-    default_actions
+    actions
   end
 
   form partial: 'form'

@@ -10,4 +10,5 @@ class Supplement < ActiveRecord::Base
   validates :number, presence: true
   validates :pages, presence: true
   validates :description, presence: true
+  validates_attachment :pdf, content_type: { content_type: 'application/pdf' }
 end

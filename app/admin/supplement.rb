@@ -5,7 +5,7 @@ ActiveAdmin.register Supplement do
   index download_links: false do
     column :title
     column :pages
-    default_actions
+    actions
   end
 
   form partial: 'form'

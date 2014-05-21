@@ -11,6 +11,7 @@ class Article < ActiveRecord::Base
   validates :title, presence: true
   validates :volume, presence: true
   validate :pages_format
+  validates_attachment :pdf, content_type: { content_type: 'application/pdf' }
 
   def pages=(pages_str)
     @pages = pages_str

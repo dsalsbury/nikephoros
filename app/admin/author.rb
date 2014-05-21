@@ -4,7 +4,7 @@ ActiveAdmin.register Author do
 
   index download_links: false do
     column :full_name
-    default_actions
+    actions
   end
 
   form do |f|

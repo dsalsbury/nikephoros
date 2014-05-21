@@ -5,7 +5,7 @@ ActiveAdmin.register AdminUser, as: 'User', download_links: false do
     column :email
     column :last_sign_in_at
     column :sign_in_count
-    default_actions
+    actions
   end
 
   form do |f|

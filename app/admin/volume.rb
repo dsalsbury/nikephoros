@@ -5,7 +5,7 @@ ActiveAdmin.register Volume do
     column :number
     column :year
     column 'ISBN', :isbn
-    default_actions
+    actions
   end
 
   form do |f|
