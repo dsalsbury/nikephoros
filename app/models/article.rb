@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+  mount_uploader :pdf, PdfUploader
+
   belongs_to :volume
 
   has_many :authorships, as: :document
@@ -6,12 +8,9 @@ class Article < ActiveRecord::Base
   has_many :taggings, as: :document
   has_many :keywords, through: :taggings
 
-  has_attached_file :pdf, url: '/system/pdfs/:filename', default_url: nil
-
   validates :title, presence: true
   validates :volume, presence: true
   validate :pages_format
-  validates_attachment :pdf, content_type: { content_type: 'application/pdf' }
 
   def pages=(pages_str)
     @pages = pages_str

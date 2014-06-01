@@ -1,5 +1,5 @@
 class SupplementDecorator < ApplicationDecorator
-  delegate :number, :title, :pages, :description, :pdf, :pdf_file_name
+  delegate :number, :title, :pages, :description, :pdf, :pdf_cache
   decorates_associations :authors
 
   def author_names
@@ -7,6 +7,6 @@ class SupplementDecorator < ApplicationDecorator
   end
 
   def pdf_download_link
-    h.link_to('Download', pdf.url) if pdf_file_name
+    h.link_to('Download', pdf.url) if pdf
   end
 end

@@ -1,5 +1,5 @@
 class ArticleDecorator < ApplicationDecorator
-  delegate :title, :keywords, :pdf, :volume_id, :pdf_file_name
+  delegate :title, :keywords, :pdf, :pdf_cache, :volume_id, :keyword_names
   decorates_associations :volume, :authors
 
   def author_names
@@ -15,7 +15,7 @@ class ArticleDecorator < ApplicationDecorator
   end
 
   def pdf_download_link
-    h.link_to('Download', pdf.url) if pdf_file_name
+    h.link_to('Download', pdf.url) if pdf
   end
 
   def page_title
