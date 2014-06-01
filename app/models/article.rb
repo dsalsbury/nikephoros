@@ -22,12 +22,13 @@ class Article < ActiveRecord::Base
   end
 
   def keyword_names=(val)
+    @keyword_names = val
     names = val.split(/,\s*/)
     self.keywords = names.map { |name| Keyword.where(name: name).first_or_create }
   end
 
   def keyword_names
-    keywords.pluck(:name).join(',')
+    @keyword_names || keywords.pluck(:name).join(',')
   end
 
   def self.sort_by_volume_number_and_first_page

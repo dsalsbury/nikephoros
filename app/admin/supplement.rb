@@ -37,7 +37,7 @@ ActiveAdmin.register Supplement do
     helper_method :volumes, :authors, :current_volume_id, :current_author_ids, :keyword_names, :keywords, :form_action
 
     def permitted_params
-      params.permit({ supplement: [{ author_ids: [] }, :number, :title, :pages, :description, :pdf, :id] })
+      params.permit(supplement: [{ author_ids: [] }, :number, :title, :pages, :description, :pdf, :pdf_cache, :id])
     end
   end
 end

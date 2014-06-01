@@ -54,7 +54,7 @@ ActiveAdmin.register Article do
     helper_method :volumes, :authors, :current_volume_id, :current_author_ids, :keyword_names, :keywords, :form_action
 
     def permitted_params
-      params.permit({ article: [:volume_id, { author_ids: [] }, :title, :pages, :keyword_names, :pdf, :id] })
+      params.permit(article: [:volume_id, { author_ids: [] }, :title, :pages, :keyword_names, :pdf, :pdf_cache, :id])
     end
   end
 end

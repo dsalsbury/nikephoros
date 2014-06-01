@@ -1,4 +1,4 @@
-= semantic_form_for(@article, url: form_action) do |f|
+= semantic_form_for(@article, url: form_action, html: { multipart: true }) do |f|
   = f.inputs do
     = f.input :volume, collection: volumes, selected: current_volume_id
     = f.input :authors, collection: authors, selected: current_author_ids, required: false, input_html: { class: :select2, multiple: true }
@@ -7,6 +7,6 @@
     %li#article_keywords_input.string.input.optional.stringish
       %label.label{ for: 'article_keyword_names' }= Article.human_attribute_name(:keywords)
       = f.hidden_field :keyword_names, class: :select2, data: { keywords: keywords }
-    = f.input :pdf, label: 'PDF', required: false
+    = pdf_field(f, @article)
 
   = f.actions
