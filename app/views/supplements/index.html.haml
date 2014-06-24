@@ -9,8 +9,9 @@
     %tr
       %td.center{ colspan: 4 }= paginate @supplements, remote: true
   %tbody
-    = content_tag_for(:tr, @supplements) do |supplement|
-      %td.center= supplement.number
-      %td= supplement.author_names
-      %td= supplement.title
-      %td.nowrap.center= supplement.pages
+    - @supplements.each do |supplement|
+      %tr.clickable-row{ data: { url: supplement.pdf.url } }
+        %td.center= supplement.number
+        %td= supplement.author_names
+        %td= supplement.title
+        %td.nowrap.center= supplement.pages

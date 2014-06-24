@@ -23,6 +23,10 @@ td {
 tbody tr {
   border-bottom: 1px solid #ddd;
 
+  &.clickable-row[data-url] {
+    cursor: pointer;
+  }
+
   &:hover {
     background-color: tint($blue, 30%);
   }
