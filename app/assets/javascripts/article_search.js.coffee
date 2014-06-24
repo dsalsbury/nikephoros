@@ -39,4 +39,4 @@ $ ->
     performSearch.call(this)
 
   container.find('.select2').select2
-    width: '250px'
+    width: '50%'

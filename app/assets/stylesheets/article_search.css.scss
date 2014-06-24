@@ -1,5 +1,4 @@
 #article-search {
-  float: right;
   margin-top: 10px;
 
   a {
@@ -12,11 +11,20 @@
     }
   }
 
-  select#q_authors_id_in {
-    width: 200px;
-  }
+  .input {
+    margin-bottom: 5px;
 
-  input.select2-input {
-    width: 200px;
+    label {
+      margin-right: 10px;
+      margin-top: 3px;
+      margin-left: 15%;
+      float: left;
+      text-align: right;
+      width: 10%;
+    }
+
+    input {
+      width: 50%;
+    }
   }
 }
