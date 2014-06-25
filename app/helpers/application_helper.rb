@@ -5,7 +5,7 @@ module ApplicationHelper
     if record.pdf_cache
       existing_filename = record.pdf_cache.split('/').last
     elsif record.pdf.file
-      existing_filename = record.pdf.file.original_filename
+      existing_filename = record.pdf.file.filename
     end
 
     str = builder.input(:pdf, label: 'PDF', required: false)

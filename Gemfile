@@ -11,6 +11,7 @@ gem 'haml-rails', '~> 0.5.3'
 gem 'high_voltage'
 gem 'jquery-rails'
 gem 'neat'
+gem 'fog', '~> 1.20.0', require: 'fog/aws/storage'
 gem 'carrierwave'
 gem 'pg'
 gem 'rack-timeout'
@@ -34,6 +35,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'rspec', '~> 2.99.0.beta2'
   gem 'rspec-rails', '~> 2.99.0.beta2'

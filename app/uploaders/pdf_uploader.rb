@@ -1,9 +1,10 @@
+require 'fog/aws/storage'
+require 'carrierwave'
+
 class PdfUploader < CarrierWave::Uploader::Base
-  storage :file
-  # storage :fog
+  storage :fog
 
   def store_dir
-    "system/pdfs/#{model.id}"
   end
 
   def extension_white_list
