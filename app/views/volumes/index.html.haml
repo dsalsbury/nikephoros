@@ -5,7 +5,9 @@
       %th= t('year')
       %th= t('isbn')
   %tbody
-    = content_tag_for(:tr, @volumes) do |volume|
-      %td= volume.name
-      %td{ class: :center }= volume.year
-      %td= volume.isbn
+    - @volumes.each do |volume|
+      %tr.clickable-row{ data: { url: volume_path(volume) } }
+        %td= volume.name
+        %td{ class: :center }= volume.year
+        %td= volume.isbn
+     
