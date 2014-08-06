@@ -1,0 +1,12 @@
+%table.articles
+  %thead
+    %tr
+      %th= t('Authors')
+      %th= t('Title')
+      %th= t('Pages')
+  %tbody
+    - @articles.each do |article|
+      %tr.clickable-row{ data: { url: article.pdf.url } }
+        %td= article.author_names
+        %td= article.title
+        %td.nowrap.center= article.pages
