@@ -34,6 +34,11 @@ $ ->
     callback: performSearch
     wait: 20
     captureLength: 4
+  
+  container.find('#q_summary_cont_any').typeWatch
+    callback: performSearch
+    wait: 20
+    captureLength: 0
 
   container.find('select').change (event) ->
     performSearch.call(this)
