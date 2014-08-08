@@ -16,6 +16,7 @@ ActiveAdmin.register Article do
       row :volume
       row :author_names
       row :title
+      row :summary
       row :pages
       row :keyword_list, label: Article.human_attribute_name(:keywords)
       row(Article.human_attribute_name(:pdf)) { article.pdf_download_link }
@@ -54,7 +55,7 @@ ActiveAdmin.register Article do
     helper_method :volumes, :authors, :current_volume_id, :current_author_ids, :keyword_names, :keywords, :form_action
 
     def permitted_params
-      params.permit(article: [:volume_id, { author_ids: [] }, :title, :pages, :keyword_names, :pdf, :pdf_cache, :id])
+      params.permit(article: [:volume_id, { author_ids: [] }, :title, :summary, :pages, :keyword_names, :pdf, :pdf_cache, :id])
     end
   end
 end

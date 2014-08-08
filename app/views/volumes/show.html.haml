@@ -6,7 +6,7 @@
       %th= t('Pages')
   %tbody
     - @articles.each do |article|
-      %tr.clickable-row{ data: { url: article.pdf.url } }
+      %tr.clickable-row{ data: { url: article_path(article) } }
         %td= article.author_names
         %td= article.title
         %td.nowrap.center= article.pages

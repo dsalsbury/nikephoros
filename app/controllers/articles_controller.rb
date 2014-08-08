@@ -11,6 +11,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def show
+      @article = Article.find(params[:id]).decorate
+  end
+
   def authors
     Author.all.decorate.map { |author| [author.full_name, author.id] }
   end

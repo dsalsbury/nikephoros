@@ -10,6 +10,7 @@ class Article < ActiveRecord::Base
 
   validates :title, presence: true
   validates :volume, presence: true
+  validates :summary, presence: true
   validate :pages_format
 
   def pages=(pages_str)
@@ -55,4 +56,5 @@ class Article < ActiveRecord::Base
     parts = pages_str.gsub(' ', '').split(/(-|,)/)
     [parts[0], parts[1..-1].join]
   end
+
 end
